@@ -1,10 +1,8 @@
-const patchPackageCommand = [
-    `npm install patch-package --save-dev`,
+const Command = [
+    [`npm install patch-package --save-dev`],
     `npx patch-package react-native-hexagon-svg`,
     `patch -p1 < patches/react-native-hexagon-svg+2.0.4.patch`,
-    `npx patch-package #(all)`
-]
-const flexisipCommand = [
+    `npx patch-package #(all)`,
     `openssl pkcs12 -nodes -provider default -provider Legacy -in Voip_Certificates.p12 -out bundleId.voip.dev.pem`,
     `openssl pkcs12 -nodes -provider default -provider Legacy -in Certificates.p12 -out bundleId.prod.pem`,
     `openssl pkcs12 -nodes -provider default -provider Legacy -in Certificates_Dev.p12 -out bundleId.dev.pem`,
@@ -22,7 +20,7 @@ const flexisipCommand = [
     `scp -i stalk-key-ED25519.pem -r ubuntu@176.32.66.38:/etc/turnserver.conf /Users/new_folder`,
     `sudo firewall-cmd --list-ports`,
     `cd /opt/belledonne-communications/bin`,
-    `./flexisip_pusher --pn-provider apns.dev --pn-param ABCD1234.bundleId.voip --pn-prid <token-id> --apple-push-type PushKit --debug`,
+    // `./flexisip_pusher --pn-provider apns.dev --pn-param ABCD1234.bundleId.voip --pn-prid <token-id> --apple-push-type PushKit --debug`,
     `openssl pkcs12 -nodes -provider default -provider Legacy -in Certificates_Dev.p12 -out bundleId.dev.pem`,
     `openssl pkcs12 -nodes -in Voip_Certificates.p12 -out bundleId.voip.prod.pem`,
     `openssl x509 -in voip_services.cer -inform der -out VoIPCer.pem`,
@@ -33,8 +31,8 @@ const flexisipCommand = [
     `cd /var/opt/belledonne-communications/log/flexisip`,
     `cat flexisip-proxy.log`,
     `tail -f flexisip-proxy.log`,
-    `./flexisip_pusher --pn-provider apns --pn-param ABCD1234.bundleId.voip --pn-prid <token-id> --apple-push-type PushKit --debug`,
-    `./flexisip_pusher --pn-provider apns.dev --pn-param ABCD1234.bundleId.voip --pn-prid <token-id> --apple-push-type PushKit --debug`,
+    // `./flexisip_pusher --pn-provider apns --pn-param ABCD1234.bundleId.voip --pn-prid <token-id> --apple-push-type PushKit --debug`,
+    // `./flexisip_pusher --pn-provider apns.dev --pn-param ABCD1234.bundleId.voip --pn-prid <token-id> --apple-push-type PushKit --debug`,
     `sudo chown root:root  org.linphone.phone.voip.pem`,
     `sudo chown :root org.linphone.phone.voip*`,
     `sudo chmod 755 bundleId*`,
@@ -45,8 +43,6 @@ const flexisipCommand = [
     `cd /opt/belledonne-communications/bin/ `,
     `curl -v --header 'apns-topic: com.domain.appname' --header apns-push-type: alert --cert aps.cer --cert-type DER --key PushChatKey.pem --key-type PEM --data '{"aps":{"alert":"Test"}}' --http2  https://api.sandbox.push.apple.com/3/device/<device-id>`,
 
-]
-const gradleCommand = [
     "./gradlew tasks",               // Liệt kê tất cả các task có sẵn trong dự án.
     "./gradlew build",               // Xây dựng dự án.
     "./gradlew clean",               // Xóa bỏ tất cả các tệp và thư mục được tạo ra trong quá trình xây dựng.
@@ -62,16 +58,12 @@ const gradleCommand = [
     "./gradlew help",
     'gradle dist --exclude-task test',
     'gradle test',
-    'gradle dependencies'
-]
-const nodeCommands = [
+    'gradle dependencies',
     `dir /b /ad "%ProgramFiles%\nodejs | show nodejs Windows`,
-    `ls -d /usr/local/bin/node* | show nodejs Linux`
-]
-const nvmCommands = [
+    `ls -d /usr/local/bin/node* | show nodejs Linux`,
     "nvm install <version>",       // Cài đặt một phiên bản Node.js mới.
     "nvm use <version>",           // Sử dụng một phiên bản Node.js cụ thể.
-    "nvm ls",                      // Liệt kê tất cả các phiên bản Node.js đã được cài đặt.
+    ["nvm ls", `Liệt kê tất cả các phiên bản Node.js đã được cài đặt.`],
     "nvm ls-remote",               // Liệt kê tất cả các phiên bản Node.js có sẵn để cài đặt từ các nguồn từ xa.
     "nvm current",                 // Hiển thị phiên bản Node.js đang được sử dụng.
     "nvm alias <name> <version>",  // Đặt một alias cho một phiên bản Node.js cụ thể.
@@ -84,11 +76,9 @@ const nvmCommands = [
     "nvm deactivate",            // Vô hiệu hóa nvm, quay lại sử dụng phiên bản Node.js hệ thống.
     "nvm unload",                // Gỡ bỏ nvm khỏi môi trường hiện tại.
     "nvm version",               // Hiển thị phiên bản của nvm.
-    "nvm --help"                 // Hiển thị trợ giúp về cách sử dụng nvm.
+    "nvm --help",               // Hiển thị trợ giúp về cách sử dụng nvm.
     // Thêm các lệnh khác tại đây nếu cần
-];
 
-const tipTot = [
     `nvm use 18`,
     `sudo rm -rf /tmp/metro-*`,
     `npm start --reset-cache`,
@@ -153,9 +143,6 @@ const tipTot = [
     `chmod -R 0777 /tmp`,
     `adb reverse tcp:8081 tcp:8081`,
     `emulator  @Pixel_3_API_30`,
-
-]
-const libraryReactNative = [
     "@react-native-async-storage/async-storage",
     "@react-native-camera-roll/camera-roll",
     "@react-native-clipboard/clipboard",
@@ -215,8 +202,6 @@ const libraryReactNative = [
     "redux-saga",
     "reselect",
     "rn-fetch-blob",
-]
-const arrayPropertiesAndMethods = [
     "Array.from()",
     "Array.isArray()",
     "Array.of()",
@@ -250,10 +235,8 @@ const arrayPropertiesAndMethods = [
     "Array.prototype.unshift()",
     "Array.prototype.values()",
     "Array.length",
-    "Array.prototype"
-];
+    "Array.prototype",
 
-const objectPropertiesAndMethods = [
     "Object.assign()",
     "Object.create()",
     "Object.entries()",
@@ -280,9 +263,7 @@ const objectPropertiesAndMethods = [
     "Object.prototype.propertyIsEnumerable()",
     "Object.prototype.toLocaleString()",
     "Object.prototype.toString()",
-    "Object.prototype.valueOf()"
-];
-const linuxCommandExamples = [
+    "Object.prototype.valueOf()",
     "ls : ls, ls -l, ls -a, ls -lh",
     "cd : cd /path/to/directory, cd .., cd ~",
     "pwd : pwd",
@@ -427,9 +408,6 @@ const linuxCommandExamples = [
     "hostname : hostname",
     "uname : uname -a",
 
-]
-
-const adbCommands = [
     "adb devices",
     "adb shell",
     "adb push <local> <remote>",
@@ -450,10 +428,7 @@ const adbCommands = [
     "adb sync",
     "adb backup [-f <file>] [-apk|-noapk] [-obb|-noobb] [-shared|-noshared] [-all] [-system|-nosystem] [<packages...>]",
     "adb restore <file>",
-    "adb help"
-];
-
-const sqlCommands = [
+    "adb help",
     "CREATE TABLE table_name (column1 datatype, column2 datatype, ...);",
     "ALTER TABLE table_name ADD column_name datatype;",
     "ALTER TABLE table_name DROP COLUMN column_name;",
@@ -465,9 +440,7 @@ const sqlCommands = [
     "DELETE FROM table_name WHERE condition;",
     "CREATE DATABASE database_name;",
     "DROP DATABASE database_name;",
-    "USE database_name;"
-];
-const gitOptions = [
+    "USE database_name;",
     "git add",
     "git am",
     "git annotate",
@@ -633,9 +606,7 @@ const gitOptions = [
     "git web--browse",
     "git whatchanged",
     "git worktree",
-    "git write-tree"
-];
-const recent = [
+    "git write-tree",
     'env | grep ARCHS',
     'nvm alias default 18',
     'adb reverse tcp:8081 tcp:8081',
@@ -882,9 +853,7 @@ const recent = [
     "pod install --silent",
     "pod install --no-ansi",
     "pod install --color",
-    "pod install --repo-update"
-]
-const pingCommands = [
+    "pod install --repo-update",
     "ping google.com # Lệnh ping cơ bản",
     "ping -c 4 google.com # Gửi 4 gói tin ICMP Echo Request",
     "ping -i 2 google.com # Đặt khoảng thời gian giữa các gói tin là 2 giây",
@@ -896,8 +865,6 @@ const pingCommands = [
     "ping -i 0.5 google.com # Đặt khoảng thời gian giữa các gói tin là 0.5 giây",
     "ping -s 2000 google.com # Đặt kích thước gói tin là 2000 bytes",
     "ping -c 10 google.com # Gửi 10 gói tin ICMP Echo Request",
-];
-const networkCheckCommands = [
     "ping google.com # Kiểm tra kết nối cơ bản đến một tên miền",
     "ping -c 4 google.com # Gửi 4 gói tin ICMP Echo Request",
     "traceroute google.com # Theo dõi đường đi của các gói tin đến đích",
@@ -912,8 +879,6 @@ const networkCheckCommands = [
     "dig google.com # Tra cứu thông tin DNS",
     "host google.com # Tra cứu thông tin DNS đơn giản",
     "nslookup google.com #Kiểm tra DNS",
-];
-const commonCommand = [
     `rm -rf ~/Library/Caches/CocoaPods`,
     `rm -rf Pods`,
     `rm -rf ~/Library/Developer/Xcode/DerivedData/*`,
@@ -924,22 +889,6 @@ const commonCommand = [
     `patch -R -p1 < patches/@rocket.chat+sdk+1.3.0-mobile.patch`,
     `git apply hello.patch`,
     `git apply --reverse hello.patch`,
-]
-export const data = [
-    ...commonCommand,
-    ...networkCheckCommands,
-    ...pingCommands,
-    ...gitOptions,
-    ...sqlCommands,
-    ...adbCommands,
-    ...linuxCommandExamples,
-    ...objectPropertiesAndMethods,
-    ...recent,
-    ...arrayPropertiesAndMethods,
-    ...libraryReactNative,
-    ...tipTot,
-    ...nvmCommands,
-    ...nodeCommands,
-    ...flexisipCommand,
-    ...patchPackageCommand
-].sort()
+    [``]
+]//.sort()
+export const data = [...Command]
