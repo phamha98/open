@@ -2,6 +2,7 @@ body {
     font-family: monospace;
     margin: 0;
     padding: 0;
+    background-color: #212121;
 }
 
 .container {
@@ -12,15 +13,17 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    color: #2f2f2f;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 10px;
+    padding: 14px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 0px solid #ccc;
     margin-bottom: 20px;
+    border-radius: 1000px;
+    background-color: #2f2f2f;
 }
 
 ul {
@@ -34,10 +37,11 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #f3f2f276;  
+    background-color: #00000028;  
     padding: 5px;
+    color: #9b9b9b; 
     /* border-radius: 5px; */
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 2px 4px  #00000028;  
 
 }
 li:hover {
@@ -56,9 +60,9 @@ li:last-child {
     border-bottom: none;
 }
 .copy-button {
-    background-color: #8d96a05d; 
+    background-color: #2b2a2aba; 
     border: none; 
-    color: white; 
+    color: #9b9b9b; 
     padding: 5px 8px; 
     text-align: center; 
     text-decoration: none; 
@@ -66,14 +70,19 @@ li:last-child {
     font-size: 12px; 
     margin-left: 2px; 
     cursor: pointer; 
-    /* border-radius: 5px;  */
+    border-radius: 2px; 
     transition: background-color 0.3s; 
 
 }
 .copy-button:hover {
     background-color: #45a049; 
+    color: white;
 }
 .copy-button i {
     margin-right: 0px;
     /* color: #000; */
+} 
+.copy-button i:hover {
+    margin-right: 0px;
+   
 } 
