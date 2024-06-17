@@ -24,6 +24,7 @@ const Command = [
     `scp -i stalk-key-ED25519.pem -r ubuntu@176.32.66.38:/etc/turnserver.conf /Users/new_folder`,
     `sudo firewall-cmd --list-ports`,
     `cd /opt/belledonne-communications/bin`,
+    [`npm i @microlink/react`, 'https://www.npmjs.com/package/@microlink/react'],
     // `./flexisip_pusher --pn-provider apns.dev --pn-param ABCD1234.bundleId.voip --pn-prid <token-id> --apple-push-type PushKit --debug`,
     `openssl pkcs12 -nodes -provider default -provider Legacy -in Certificates_Dev.p12 -out bundleId.dev.pem`,
     `openssl pkcs12 -nodes -in Voip_Certificates.p12 -out bundleId.voip.prod.pem`,
@@ -896,4 +897,4 @@ const Command = [
     [`which node`, `Kiểm tra đường dẫn Node.js`],
     ['which npm', 'Kiểm tra đường dẫn npm:']
 ]//.sort()
-export const data = [...Command].slice(0, 1)
+export const data = [...Command] 

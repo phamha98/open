@@ -63,9 +63,9 @@ const Item = ({ item }) => {
           </div>
           <div style={{ display: links.length > 0 ? 'flex' : 'none', backgroundColor: 'transparent', textAlign: 'left', flexDirection: 'column' }}>
             {links.map((more, index) =>
-              <div key={index} >
+              <div key={index} style={{}}>
                 <a href={more} style={{ fontSize: 12, }}>{more}</a>
-                <Microlink url={more} direction={more} />
+                <Microlink url={more} direction={more} style={{ width: '100%' }} />
               </div>
             )}
             <div  >
