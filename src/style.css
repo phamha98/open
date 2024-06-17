@@ -2,7 +2,7 @@ body {
     font-family: monospace;
     margin: 0;
     padding: 0;
-    background-color: #212121;
+    /* background-color: #212121; */
 }
 
 .container {
@@ -13,17 +13,18 @@ body {
 
 h1 {
     margin-bottom: 20px;
-    color: #2f2f2f;
+    /* color: #2f2f2f; */
 }
 
 input[type="text"] {
     width: 100%;
     padding: 14px;
     font-size: 16px;
-    border: 0px solid #ccc;
+    border: 1px solid #ccc;
     margin-bottom: 20px;
     border-radius: 1000px;
-    background-color: #2f2f2f;
+    background-color: #fff;
+    /* color: #9b9b9b;  */
 }
 
 ul {
@@ -33,13 +34,13 @@ ul {
 }
 
 li {
-    margin: 10px 0;
+    /* margin: 10px 0; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #00000028;  
+    background-color: #ffffff28;  
     padding: 5px;
-    color: #9b9b9b; 
+    /* color: #9b9b9b;  */
     /* border-radius: 5px; */
     box-shadow: 0 2px 4px  #00000028;  
 
@@ -60,7 +61,7 @@ li:last-child {
     border-bottom: none;
 }
 .copy-button {
-    background-color: #2b2a2aba; 
+    background-color: #e7e6e6ba; 
     border: none; 
     color: #9b9b9b; 
     padding: 5px 8px; 
